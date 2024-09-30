@@ -98,7 +98,8 @@ export let Global /*: React.AbstractComponent<
       speedy: cache.sheet.isSpeedy
     })
     let rehydrating = false
-    let node /*: HTMLStyleElement | null*/ = document.querySelector(
+    const currentDocument = cache.sheet.container.ownerDocument
+    let node /*: HTMLStyleElement | null*/ = currentDocument.querySelector(
       `style[data-emotion="${key} ${serialized.name}"]`
     )
     if (cache.sheet.tags.length) {
